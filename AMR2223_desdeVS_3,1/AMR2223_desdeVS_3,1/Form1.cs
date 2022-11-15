@@ -28,15 +28,20 @@ namespace AMR2223_desdeVS_3_1
             // AMR2223 telegrama urgente?
             if (radioButton1.Checked)
                 tipoTelegrama = 'u';
-            //Obtengo el número de palabras que forma el telegrama
-            numPalabras = textoTelegrama.Length;
-            //AMR2223 Si el telegrama es ordinario
-            if (radioButton2.Checked)
-            {
+            else
                 tipoTelegrama = 'o';
-            //if (tipoTelegrama == 'o')
+
+            //Obtengo el número de palabras que forma el telegrama
+            //          AMR2223
+            //numPalabras = textoTelegrama.Length; es INCORRECTO
+
+            numPalabras = textoTelegrama.Split(' ', '.', ',').Length;
+
+
+            //Si el telegrama es ordinario
+            if (tipoTelegrama == 'o')
                 if (numPalabras <= 10)
-                    coste = 25;
+                    coste = 2.5;
                 else
                     coste = 0.5 * numPalabras;
             }
