@@ -46,6 +46,10 @@ namespace AMR2223_desdeVS_3_1
             else
                 coste = 0;
             txtPrecio.Text = coste.ToString() + " euros";
+
+            //prueba de mi variación de código
+
+
         }
     }
 }
